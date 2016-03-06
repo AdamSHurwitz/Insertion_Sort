@@ -16,18 +16,19 @@ public class InsertionSort {
         String solution = "";
         int[] newArray = new int[array.length + 1];
 
-        for (int compareIndex = rightIndex; compareIndex >= 0; compareIndex--) {
-            System.out.println(compareIndex);
-            if (compareIndex == 0) {
-                newArray[compareIndex + 1] = array[compareIndex];
-                newArray[compareIndex] = value;
-               /* System.out.println("compareIndex is: " + compareIndex + "!" + " newArray[0] is "
-                        + newArray[compareIndex]);*/
-            }
-            else if (array[compareIndex] > value) {
-                newArray[compareIndex + 1] = array[compareIndex];
+        for (int compareIndex = array.length; compareIndex >= 0; compareIndex--) {
+            //System.out.println(compareIndex);
+            if (compareIndex > rightIndex) {
+                newArray[compareIndex] = array[compareIndex - 1];
             } else {
-                newArray[compareIndex] = value;
+                if (compareIndex == 0) {
+                    newArray[compareIndex + 1] = array[compareIndex];
+                    newArray[compareIndex] = value;
+                } else if (array[compareIndex] > value) {
+                    newArray[compareIndex + 1] = array[compareIndex];
+                } else {
+                    newArray[compareIndex] = value;
+                }
             }
         }
 
