@@ -6,7 +6,7 @@ package javaclasses;
 public class InsertionSort {
     static private final String LOG_TAG = InsertionSort.class.getSimpleName();
 
-    static int[] array = {22, 11, 99, 88, 9, 7, 42};
+    static int[] array = {22, 11, 85, 88, 9, 7, 42};
 
     public static void main(String[] arg) {
         System.out.println("Answer is: " + insertionSort(array));
@@ -14,9 +14,20 @@ public class InsertionSort {
 
     public static String insertionSort(int[] array) {
         String solution = "";
-        for (int i = 0; i < array.length - 1; i++) {
-            solution = insertValue(array, array.length-2, i);
-            //rightIndex -= 1;
+        //TODO: Fix implementation
+        for (int i = 1; i < array.length; i++) {
+            int key = array[i];
+            int j = i - 1;
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j];
+                j--;
+            }
+            array[j + 1] = key;
+
+            //solution = insertValue(array, array.length - 2, i);
+        }
+        for (int i = 0; i < array.length; i++) {
+            solution += " " + array[i];
         }
         return solution;
     }
