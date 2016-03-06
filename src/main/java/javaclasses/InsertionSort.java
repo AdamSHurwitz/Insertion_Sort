@@ -10,32 +10,29 @@ public class InsertionSort {
 
     public static void main(String[] arg) {
         System.out.println("Answer is: " + insertValue(array, 4, 2));
+        System.out.println("Answer is: " + insertValue(array, 5, 9));
+        System.out.println("Answer is: " + insertValue(array, 6, 6));
     }
 
     public static String insertValue(int[] array, int rightIndex, int value) {
         String solution = "";
-        int[] newArray = new int[array.length + 1];
 
         for (int compareIndex = array.length; compareIndex >= 0; compareIndex--) {
             //System.out.println(compareIndex);
-            if (compareIndex > rightIndex) {
-                newArray[compareIndex] = array[compareIndex - 1];
-            } else {
-                if (compareIndex == 0) {
-                    newArray[compareIndex + 1] = array[compareIndex];
-                    newArray[compareIndex] = value;
-                } else if (array[compareIndex] > value) {
-                    newArray[compareIndex + 1] = array[compareIndex];
-                } else {
-                    newArray[compareIndex] = value;
+            if (compareIndex <= rightIndex) {
+                if (array[compareIndex] > value) {
+                    int temp = array[compareIndex + 1];
+                    array[compareIndex + 1] = array[compareIndex];
+                    array[compareIndex] = temp;
+
                 }
             }
         }
 
-        System.out.println("Array Length " + newArray.length);
+        System.out.println("Array Length " + array.length);
 
-        for (int i = 0; i < newArray.length; i++) {
-            solution += " " + newArray[i];
+        for (int i = 0; i < array.length; i++) {
+            solution += " " + array[i];
         }
         return solution;
     }
