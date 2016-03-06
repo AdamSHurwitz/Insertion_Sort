@@ -19,13 +19,10 @@ public class InsertionSort {
 
         for (int compareIndex = array.length; compareIndex >= 0; compareIndex--) {
             //System.out.println(compareIndex);
-            if (compareIndex <= rightIndex) {
-                if (array[compareIndex] > value) {
-                    int temp = array[compareIndex + 1];
-                    array[compareIndex + 1] = array[compareIndex];
-                    array[compareIndex] = temp;
-
-                }
+            if (compareIndex <= rightIndex && array[compareIndex] > value) {
+                int temp = array[compareIndex + 1];
+                array[compareIndex + 1] = array[compareIndex];
+                array[compareIndex] = temp;
             }
         }
 
