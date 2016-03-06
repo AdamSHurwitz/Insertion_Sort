@@ -12,21 +12,21 @@ public class InsertionSort {
         System.out.println("Answer is: " + insertionSort(array));
     }
 
-    public static String insertionSort(int[] array){
-        int rightIndex = array.length - 2;
-        int value = array[0];
-        System.out.println("rightIndex: " + rightIndex + " value: " + value);
-        return insertValue(array, rightIndex, value);
+    public static String insertionSort(int[] array) {
+        String solution = "";
+        for (int i = 0; i < array.length - 1; i++) {
+            solution = insertValue(array, array.length-2, i);
+            //rightIndex -= 1;
+        }
+        return solution;
     }
 
     public static String insertValue(int[] array, int rightIndex, int value) {
         String solution = "";
 
-        for (int compareIndex = array.length - 1; compareIndex >= 0; compareIndex--) {
-            if (compareIndex <= rightIndex
-                    && array[compareIndex] > value
-                    ) {
-                System.out.println(compareIndex);
+        for (int compareIndex = array.length; compareIndex >= 0; compareIndex--) {
+            //System.out.println(compareIndex);
+            if (compareIndex <= rightIndex && array[compareIndex] > value) {
                 int temp = array[compareIndex + 1];
                 array[compareIndex + 1] = array[compareIndex];
                 array[compareIndex] = temp;
@@ -40,6 +40,7 @@ public class InsertionSort {
         }
         return solution;
     }
+
 
     /*static int[] array = {3, 5, 7, 11, 13, 2, 9, 6};
 
