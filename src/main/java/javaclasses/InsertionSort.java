@@ -6,7 +6,7 @@ package javaclasses;
 public class InsertionSort {
     static private final String LOG_TAG = InsertionSort.class.getSimpleName();
 
-    static int[] A = {22, 11, 85, 88, 9, 7, 42};
+    static int[] A = {22, 11, 85, 888, 9, 7, 42};
 
     public static void main(String[] arg) {
         System.out.println("Answer is: " + insertionSort(A
@@ -25,10 +25,6 @@ public class InsertionSort {
                 j--;
             }
             A[j + 1] = key;
-
-            //solution = insertValue(A
-            // , A
-            // .length - 2, i);
         }
         for (int i = 0; i < A.length; i++) {
             solution += " " + A[i];
