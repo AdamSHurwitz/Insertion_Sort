@@ -15,17 +15,17 @@ public class InsertionSort {
 
     public static String insertionSort(int[] A) {
         String solution = "";
-
-        for (int i = 1; i < A.length; i++) {
+        for (int x = 1; x < A.length; x++) {
             // key to keep track of which element currently is being evaluated
-            int key = A[i];
-            int j = i - 1;
-            while (j >= 0 && A[j] > key) {
-                A[j + 1] = A[j];
-                j--;
+            int temp = A[x];
+            int a = x - 1;
+            while (a >= 0 && A[a] > temp) {
+                A[a + 1] = A[a];
+                a--;
             }
-            A[j + 1] = key;
+            A[a + 1] = temp;
         }
+
         for (int i = 0; i < A.length; i++) {
             solution += " " + A[i];
         }
