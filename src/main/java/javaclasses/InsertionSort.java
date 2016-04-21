@@ -9,16 +9,15 @@ public class InsertionSort {
     static int[] A = {22, 11, 85, 888, 9, 7, 42};
 
     public static void main(String[] arg) {
-        System.out.println("Answer is: " + insertionSort(A
-        ));
+        System.out.println("Answer is: " + insertionSort(A));
     }
 
     public static String insertionSort(int[] A) {
         String solution = "";
-        for (int x = 1; x < A.length; x++) {
+        for (int b = 1; b < A.length; b++) {
             // key to keep track of which element currently is being evaluated
-            int temp = A[x];
-            int a = x - 1;
+            int temp = A[b];
+            int a = b - 1;
             while (a >= 0 && A[a] > temp) {
                 A[a + 1] = A[a];
                 a--;
